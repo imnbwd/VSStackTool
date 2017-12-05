@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <Extern href="stdidcmd.h" />
+  <Extern href="vsshlids.h" />
+  <Commands package="guidStackToolPackage">
+    <Menus>
+      <Menu guid="guidStackToolPackageCmdSet" id="Toolbar" type="Toolbar">
+        <CommandFlag>DefaultDocked</CommandFlag>
+        <Strings>
+          <ButtonText>Stack Toolbar</ButtonText>
+          <CommandName>Stack Toolbar</CommandName>
+        </Strings>
+      </Menu>
+      <Menu guid="guidStackToolPackageCmdSet" id="StackOverflowMenuController" priority="0x0100" type="MenuController">
+        <Parent guid="guidStackToolPackageCmdSet" id="ToolbarGroup" />
+        <CommandFlag>IconAndText</CommandFlag>
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>TextIsAnchorCommand</CommandFlag>
+        <Strings>
+          <ButtonText>Stack Overflow</ButtonText>
+          <CommandName>Stack Overflow</CommandName>
+        </Strings>
+      </Menu>
+      <Menu guid="guidStackToolPackageCmdSet" id="SearchMenuController" priority="0x0101" type="MenuController">
+        <Parent guid="guidStackToolPackageCmdSet" id="ToolbarGroup" />
+        <CommandFlag>TextChanges</CommandFlag>
+        <CommandFlag>TextIsAnchorCommand</CommandFlag>
+        <Strings>
+          <ButtonText>Search</ButtonText>
+          <CommandName>Search</CommandName>
+        </Strings>
+      </Menu>
+    </Menus>
+    <Groups>
+      <Group guid="guidStackToolPackageCmdSet" id="ToolbarGroup" priority="0x0600">
+        <Parent guid="guidStackToolPackageCmdSet" id="Toolbar" />
+      </Group>
+      <Group guid="guidStackToolPackageCmdSet" id="ToolbarGroup2" priority="0x0601">
+        <Parent guid="guidStackToolPackageCmdSet" id="Toolbar" />
+      </Group>
+      <Group guid="guidStackToolPackageCmdSet" id="StackOverflowMenuControllerGroup" priority="0x000">
+        <Parent guid="guidStackToolPackageCmdSet" id="StackOverflowMenuController" />
+      </Group>
+      <Group guid="guidStackToolPackageCmdSet" id="SearchMenuControllerGroup" priority="0x001">
+        <Parent guid="guidStackToolPackageCmdSet" id="SearchMenuController" />
+      </Group>
+    </Groups>
+
+    <Buttons>
+      <Button guid="guidStackToolPackageCmdSet" id="ToolbarUwpCommandId" priority="0x0100" type="Button">
+        <Parent guid="guidStackToolPackageCmdSet" id="StackOverflowMenuControllerGroup" />
+        <Icon guid="guidImagesStackOverflow" id="bmpPic1" />
+        <CommandFlag>IconAndText</CommandFlag>
+        <Strings>
+          <ButtonText>UWP</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidStackToolPackageCmdSet" id="ToolbarXamlCommandId" priority="0x0101" type="Button">
+        <Parent guid="guidStackToolPackageCmdSet" id="StackOverflowMenuControllerGroup" />
+        <Icon guid="guidImagesStackOverflow" id="bmpPic1" />
+        <CommandFlag>IconAndText</CommandFlag>
+        <Strings>
+          <ButtonText>XAML</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidStackToolPackageCmdSet" id="ToolbarWpfCommandId" priority="0x0102" type="Button">
+        <Parent guid="guidStackToolPackageCmdSet" id="StackOverflowMenuControllerGroup" />
+        <Icon guid="guidImagesStackOverflow" id="bmpPic1" />
+        <CommandFlag>IconAndText</CommandFlag>
+        <Strings>
+          <ButtonText>WPF</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidStackToolPackageCmdSet" id="ToolbarGithubCommandId" priority="0x0103" type="Button">
+        <Parent guid="guidStackToolPackageCmdSet" id="ToolbarGroup" />
+        <Icon guid="guidImagesGithub" id="bmpPic1" />
+        <Strings>
+          <ButtonText>Github</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidStackToolPackageCmdSet" id="ToolbarSearchBingCommandId" priority="0x0104" type="Button">
+        <Parent guid="guidStackToolPackageCmdSet" id="SearchMenuControllerGroup" />
+        <Icon guid="guidImagesBing" id="bmpPic1" />
+        <Strings>
+          <ButtonText>Bing</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidStackToolPackageCmdSet" id="ToolbarSearchDocsCommandId" priority="0x0105" type="Button">
+        <Parent guid="guidStackToolPackageCmdSet" id="SearchMenuControllerGroup" />
+        <Icon guid="guidImagesMicrosoftDocs" id="bmpPic1" />
+        <Strings>
+          <ButtonText>Microsoft Docs</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidStackToolPackageCmdSet" id="ToolbarGenerateNPropertyCommandId" priority="0x0105" type="Button">
+        <Parent guid="guidStackToolPackageCmdSet" id="ToolbarGroup2" />
+        <Icon guid="guidImagesGenerateNProperty" id="bmpPic1" />
+        <Strings>
+          <ButtonText>Generate NotifyProperty Code</ButtonText>
+        </Strings>
+      </Button>
+    </Buttons>
+    <Bitmaps>
+      <Bitmap guid="guidImagesStackOverflow" href="Resources\StackOverflow2.ico" usedList="bmpPic1" />
+      <Bitmap guid="guidImagesGithub" href="Resources\github.png" usedList="bmpPic1" />
+      <Bitmap guid="guidImagesMicrosoftDocs" href="Resources\MicrosoftDocs.png" usedList="bmpPic1" />
+      <Bitmap guid="guidImagesBing" href="Resources\Bing.png" usedList="bmpPic1" />
+      <Bitmap guid="guidImagesGenerateNProperty" href="Resources\Code.png" usedList="bmpPic1" />
+    </Bitmaps>
+  </Commands>
+  <KeyBindings>
+    <KeyBinding guid="guidStackToolPackageCmdSet" id="ToolbarGenerateNPropertyCommandId"  editor="guidVSStd97" key1="3" mod1="Control"/>
+  </KeyBindings>
+  <Symbols>
+    <GuidSymbol name="guidStackToolPackage" value="{5498f07e-2ca1-4d3b-bcfb-5e8a8a082eed}" />
+
+    <GuidSymbol name="guidStackToolPackageCmdSet" value="{8f66deb0-240b-4137-8550-723344e49722}">
+      <IDSymbol name="Toolbar" value="0x1000" />
+      <IDSymbol name="ToolbarGroup" value="0x1050" />
+      <IDSymbol name="ToolbarGroup2" value="0x1051" />
+
+      <IDSymbol name="StackOverflowMenuController" value="0x9001" />
+      <IDSymbol name="StackOverflowMenuControllerGroup" value="0x9002" />
+
+      <IDSymbol name="SearchMenuController" value="0x9011" />
+      <IDSymbol name="SearchMenuControllerGroup" value="0x9012" />
+
+      <IDSymbol name="ToolbarUwpCommandId" value="0x2001" />
+      <IDSymbol name="ToolbarXamlCommandId" value="0x2002" />
+      <IDSymbol name="ToolbarWpfCommandId" value="0x2003" />
+
+      <IDSymbol name="ToolbarGithubCommandId" value="0x2004" />
+
+      <IDSymbol name="ToolbarSearchBingCommandId" value="0x2005" />
+      <IDSymbol name="ToolbarSearchDocsCommandId" value="0x2006" />
+
+      <IDSymbol name="ToolbarGenerateNPropertyCommandId" value="0x2101" />
+    </GuidSymbol>
+
+    <GuidSymbol name="guidImagesStackOverflow" value="{ca99f35f-df50-4bb3-9ef0-e1464ae9b9a8}">
+      <IDSymbol name="bmpPic1" value="1" />
+      <IDSymbol name="bmpPic2" value="2" />
+    </GuidSymbol>
+
+    <GuidSymbol name="guidImagesGithub" value="{da99f35f-df50-4bb3-9ef0-e1464ae9b9a8}">
+      <IDSymbol name="bmpPic1" value="1" />
+    </GuidSymbol>
+
+    <GuidSymbol name="guidImagesMicrosoftDocs" value="{ea99f35f-df50-4bb3-9ef0-e1464ae9b9a8}">
+      <IDSymbol name="bmpPic1" value="1" />
+    </GuidSymbol>
+
+    <GuidSymbol name="guidImagesBing" value="{fa99f35f-df50-4bb3-9ef0-e1464ae9b9a8}">
+      <IDSymbol name="bmpPic1" value="1" />
+    </GuidSymbol>
+
+    <GuidSymbol name="guidImagesGenerateNProperty" value="{fbaaf35f-df50-4bb3-9ef0-e1464ae9b9a8}">
+      <IDSymbol name="bmpPic1" value="1" />
+    </GuidSymbol>
+  </Symbols>
+</CommandTable>
